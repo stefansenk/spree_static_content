@@ -1,7 +1,4 @@
 class Spree::StaticContentController < Spree::BaseController
-  caches_action :show, :cache_path => Proc.new { |controller|
-    "spree_static_content/" + controller.params[:path].to_s + "_spree_static_content"
-  }
 
   helper "spree/products"
 
@@ -32,5 +29,5 @@ class Spree::StaticContentController < Spree::BaseController
   def accurate_title
     @page ? (@page.meta_title.present? ? @page.meta_title : @page.title) : nil
   end
-end
 
+end
